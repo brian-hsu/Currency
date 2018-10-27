@@ -32,18 +32,18 @@ public class MainActivity extends AppCompatActivity {
 
         if (n.equals("")){
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("OK", null)
+                    .setTitle(R.string.problem)
+                    .setMessage(getString(R.string.enter_your_ntd))
+                    .setPositiveButton(R.string.ok, null)
                     .show();
         }else {
             Float floatNtd = Float.parseFloat(n);
             Float floatUsdRate = Float.parseFloat(USD_RATE);
             Float result = floatNtd / floatUsdRate;
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("USD is " + result)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.result)
+                    .setMessage(getString(R.string.usd_is) + result)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             edNtd.setText("");
